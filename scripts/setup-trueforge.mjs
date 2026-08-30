@@ -1,10 +1,13 @@
 import { randomUUID } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
+import { dirname, join } from "node:path";
 
 const dbPath =
   process.env.SQLITE_PATH ??
-  "/Users/manishikaagarwal/Documents/Codex/2026-08-25/hi/work/trueforge-data/db/db.sqlite";
+  join(process.cwd(), ".trueforge", "db.sqlite");
+
+mkdirSync(dirname(dbPath), { recursive: true });
 
 const tenant = "default";
 const now = new Date().toISOString();
@@ -86,6 +89,20 @@ on conflict(tenant_id, name) do update set manifest = excluded.manifest, updated
 }
 
 const geminiApiKey = process.env.GEMINI_API_KEY ?? process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+if (!geminiApiKey) {
+  const providerCheck = existsSync(dbPath)
+    ? spawnSync("sqlite3", [dbPath], {
+        input: "select count(*) from model_provider where tenant_id='default' and name='google-gemini';",
+        encoding: "utf8"
+      })
+    : { status: 1, stdout: "" };
+  const hasExistingProvider = providerCheck.status === 0 && Number(providerCheck.stdout.trim()) > 0;
+  if (!hasExistingProvider) {
+    console.error("GEMINI_API_KEY is required on a fresh setup because the seeded agents use Google Gemini.");
+    console.error("Start TrueForge once to initialize the local database, then rerun with GEMINI_API_KEY set.");
+    process.exit(1);
+  }
+}
 if (geminiApiKey) {
   const geminiProvider = {
     type: "google-gemini",
@@ -118,4 +135,3 @@ console.log("TrueForge seed complete.");
 console.log(`Database: ${dbPath}`);
 console.log(`Agents: ${agents.map((agent) => agent.name).join(", ")}`);
 console.log(`Gemini provider: ${geminiApiKey ? "configured from env var" : "left unchanged; no key written to repo"}`);
-

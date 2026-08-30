@@ -25,8 +25,11 @@ npm test
 npm run analyze
 npm run recommend
 npm run draft-workorders
+npm run draft-workorders:approved
 npm run dashboard
 ```
+
+`npm run draft-workorders` is expected to refuse without approval; the `:approved` command is only for the explicit human-approved step.
 
 ## Qodo
 
@@ -35,4 +38,3 @@ After opening the PR, wait for Qodo review. If it does not start automatically, 
 ```text
 /agentic_review
 ```
-

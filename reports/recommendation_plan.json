@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T07:16:30.925Z",
+  "generated_at": "2026-08-30T07:46:03.150Z",
   "method": "Deterministic RCM/FMEA-style recommendation rules using abnormal condition, consequence severity, detection evidence, maintenance interval, and required approval controls.",
   "disclaimer": "Recommendations are decision support only. They do not replace site procedures, engineering judgement, OEM instructions, or regulatory obligations.",
   "approval_queue_count": 8,

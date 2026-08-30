@@ -1,6 +1,6 @@
 # FabGuard Maintenance Risk Triage
 
-Generated: 2026-08-30T07:16:30.768Z
+Generated: 2026-08-30T07:46:02.991Z
 
 Decision support only. A qualified maintenance, process safety, and EHS owner must approve any operational action.
 

@@ -1,6 +1,6 @@
 # FabGuard Recommendation Plan
 
-Generated: 2026-08-30T07:16:30.925Z
+Generated: 2026-08-30T07:46:03.150Z
 
 Recommendations are decision support only. They do not replace site procedures, engineering judgement, OEM instructions, or regulatory obligations.
 

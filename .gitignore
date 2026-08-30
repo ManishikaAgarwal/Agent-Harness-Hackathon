@@ -5,4 +5,5 @@ node_modules/
 *.sqlite-shm
 *.sqlite-wal
 .env
-
+.trueforge/
+reports/approval.json

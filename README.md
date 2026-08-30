@@ -34,13 +34,15 @@ npm run dashboard
 npm run setup:trueforge
 ```
 
-The `draft-workorders` command intentionally stops at the approval gate. After a qualified human approves the exact proposed actions, run `npm run draft-workorders:approved` to create the draft CSV.
+The `draft-workorders` command intentionally stops at the approval gate. After a qualified human approves the exact proposed actions, the agent must write a `.trueforge/approval.json` record containing `approved`, `approval_source`, `approver`, `approved_at`, `scope`, and the approved finding IDs, then run `npm run draft-workorders:approved -- --approval-file .trueforge/approval.json` to create the draft CSV.
 
-Then launch TrueForge from a normal Terminal:
+First launch TrueForge from a normal Terminal so it initializes the project-local database:
 
 ```bash
 ./start-trueforge.sh
 ```
+
+In a second Terminal, set `GEMINI_API_KEY` in the environment and run `npm run setup:trueforge` to seed the agents and read-only MCP configuration. Never put the key in the repository.
 
 In TrueForge, choose `fabguard-maintenance-agent-sandbox` and try:
 
@@ -89,11 +91,11 @@ The safety framing is based on public guidance from:
 
 ## Qodo Code Review Evidence
 
-Complete this section after the Qodo-reviewed PR is merged:
+The representative PR is [PR #1](https://github.com/ManishikaAgarwal/Agent-Harness-Hackathon/pull/1). Qodo's initial review surfaced five bugs: approval evidence, malformed telemetry validation, portable setup, missing-provider reliability, and hardcoded dashboard data. The implementation now validates a TrueForge human-approval artifact, rejects invalid telemetry, uses a project-local database path, fails clearly when Gemini is not configured, and derives dashboard values from input data.
 
-- Representative merged PR: `<paste PR URL here>`
-- Qodo finding summary: `<what Qodo found, what was changed, and what was intentionally dismissed>`
-- Follow-up review evidence: `<paste final Qodo-reviewed PR status or thread note>`
+- Representative merged PR: [PR #1](https://github.com/ManishikaAgarwal/Agent-Harness-Hackathon/pull/1)
+- Qodo finding summary: Five findings were fixed; none were dismissed. The approval artifact, telemetry validation, portable setup, model-provider guard, and data-driven dashboard are included in the follow-up changes.
+- Follow-up review evidence: Qodo's follow-up review reports 0 bugs, 0 rule violations, and 0 skill insights, with the five original findings marked resolved.
 
 The hackathon requires substantive changes to go through GitHub PRs reviewed by Qodo. Direct pushes to main do not count.
 

@@ -1,0 +1,14 @@
+event_id,site,industry,area,asset_id,equipment_type,process_material,material_class,timestamp,metric,value,unit,normal_min,normal_max,days_since_pm,work_order_status,notes
+E-1001,Fab A,semiconductor,Wet etch bay,WB-17,wet bench,hydrofluoric acid,corrosive,2026-08-29T08:10:00Z,exhaust_flow_cfm,410,cfm,550,750,94,open,low exhaust near wet process hood
+E-1002,Fab A,semiconductor,Gas room,GC-04,gas cabinet,silane,pyrophoric,2026-08-29T08:15:00Z,leak_ppm,1.2,ppm,0,0.2,20,none,gas detector trend rose after cylinder change
+E-1003,Fab B,semiconductor,Implant support,VP-22,vacuum pump,arsine dopant,toxic,2026-08-29T08:24:00Z,vibration_mm_s,9.8,mm/s,0,4.5,130,none,bearing tone and exhaust odor reported
+E-1004,Fab B,semiconductor,Abatement,SCR-08,scrubber,acid exhaust,corrosive,2026-08-29T08:31:00Z,scrubber_ph,3.1,pH,6.5,8.5,70,open,pH drifting low with increased acid load
+E-1005,Plant C,chemical,Reactor deck,R-101,reactor,methanol,flammable,2026-08-29T08:42:00Z,pressure_bar,12.9,bar,6,10,45,none,pressure excursions during startup hold
+E-1006,Plant C,chemical,Pump alley,P-204,process pump,caustic,corrosive,2026-08-29T08:51:00Z,seal_leak_ml_min,28,ml/min,0,5,112,none,seal pot level falling faster than usual
+E-1007,Plant D,chemical,Refrigeration,HX-12,heat exchanger,ammonia,toxic,2026-08-29T09:03:00Z,outlet_temp_c,92,C,35,70,140,none,temperature spike after fouling alarm
+E-1008,Plant D,chemical,Storage,PSV-9,relief valve,propane,flammable,2026-08-29T09:10:00Z,inspection_due_days,-45,days,0,365,410,none,relief valve inspection is overdue
+E-1009,Fab A,semiconductor,CMP bay,CMP-03,CMP polisher,slurry,irritant,2026-08-29T09:22:00Z,motor_current_amp,72,A,20,55,65,none,motor current rising under normal wafer load
+E-1010,Plant C,chemical,Utilities,BLR-02,boiler,natural gas,flammable,2026-08-29T09:29:00Z,stack_o2_pct,2.1,%,3,6,88,open,combustion trim low but burner stable
+E-1011,Fab B,semiconductor,Lithography,CH-14,chiller,water,nonhazardous,2026-08-29T09:37:00Z,supply_temp_c,20.2,C,19.5,20.5,12,none,normal lithography chiller drift
+E-1012,Plant D,chemical,Tank farm,TK-07,storage tank,sodium hydroxide,corrosive,2026-08-29T09:44:00Z,level_pct,84,%,20,90,28,closed,within operating band after closed maintenance ticket
+

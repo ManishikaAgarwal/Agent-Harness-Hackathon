@@ -1,0 +1,461 @@
+{
+  "generated_at": "2026-08-30T07:46:03.150Z",
+  "method": "Deterministic RCM/FMEA-style recommendation rules using abnormal condition, consequence severity, detection evidence, maintenance interval, and required approval controls.",
+  "disclaimer": "Recommendations are decision support only. They do not replace site procedures, engineering judgement, OEM instructions, or regulatory obligations.",
+  "approval_queue_count": 8,
+  "recommendations": [
+    {
+      "recommendation_id": "REC-E-1002",
+      "source_event_id": "E-1002",
+      "asset_id": "GC-04",
+      "site": "Fab A",
+      "severity": "critical",
+      "action_class": "immediate_controlled_intervention",
+      "time_horizon": "same shift",
+      "approval_required": true,
+      "confidence": "high",
+      "confidence_score": 0.89,
+      "plausible_failure_mode": "Potential loss of toxic/flammable gas containment or detector drift.",
+      "recommendation": "Verify gas detector calibration and trend, perform leak check at cylinder and valve interfaces, confirm purge/exhaust operation, and isolate per site procedure if the reading is confirmed.",
+      "rationale": "leak_ppm is above normal band at 1.2 ppm; risk score 100 reflects pyrophoric material hazard, gas cabinet criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "gas detector bump/calibration record",
+        "local exhaust status",
+        "cylinder change log",
+        "area alarm history"
+      ],
+      "escalation_path": [
+        "area owner",
+        "maintenance lead",
+        "process safety/EHS",
+        "operations manager"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "SEMI EH&S framing: semiconductor equipment risk review includes exhaust ventilation, fire protection, equipment safety, and worker protection."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1003",
+      "source_event_id": "E-1003",
+      "asset_id": "VP-22",
+      "site": "Fab B",
+      "severity": "critical",
+      "action_class": "immediate_controlled_intervention",
+      "time_horizon": "same shift",
+      "approval_required": true,
+      "confidence": "high",
+      "confidence_score": 0.95,
+      "plausible_failure_mode": "Rotating equipment degradation with possible hazardous process byproduct exposure.",
+      "recommendation": "Run vibration confirmation, inspect bearing temperature and oil/seal condition, verify exhaust routing to abatement, and plan controlled maintenance before continued high-load operation.",
+      "rationale": "vibration_mm_s is above normal band at 9.8 mm/s; risk score 100 reflects toxic material hazard, vacuum pump criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "vibration spectrum",
+        "bearing temperature",
+        "oil/seal condition",
+        "abatement connection status"
+      ],
+      "escalation_path": [
+        "area owner",
+        "maintenance lead",
+        "process safety/EHS",
+        "operations manager"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "SEMI EH&S framing: semiconductor equipment risk review includes exhaust ventilation, fire protection, equipment safety, and worker protection."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1006",
+      "source_event_id": "E-1006",
+      "asset_id": "P-204",
+      "site": "Plant C",
+      "severity": "critical",
+      "action_class": "immediate_controlled_intervention",
+      "time_horizon": "same shift",
+      "approval_required": true,
+      "confidence": "high",
+      "confidence_score": 0.95,
+      "plausible_failure_mode": "Seal leakage from corrosive process service.",
+      "recommendation": "Confirm leak rate, verify secondary containment and seal flush, inspect seal-face/material compatibility, and draft corrective maintenance with PPE and isolation requirements.",
+      "rationale": "seal_leak_ml_min is above normal band at 28 ml/min; risk score 96 reflects corrosive material hazard, process pump criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "seal leak measurement",
+        "seal flush pressure",
+        "containment inspection",
+        "materials compatibility record"
+      ],
+      "escalation_path": [
+        "area owner",
+        "maintenance lead",
+        "process safety/EHS",
+        "operations manager"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "EPA RMP prevention framing: maintenance and monitoring are part of chemical accident prevention."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1007",
+      "source_event_id": "E-1007",
+      "asset_id": "HX-12",
+      "site": "Plant D",
+      "severity": "critical",
+      "action_class": "immediate_controlled_intervention",
+      "time_horizon": "same shift",
+      "approval_required": true,
+      "confidence": "high",
+      "confidence_score": 0.95,
+      "plausible_failure_mode": "Heat-transfer degradation or abnormal thermal load in hazardous service.",
+      "recommendation": "Confirm temperature sensor accuracy, inspect flow and fouling indicators, check leak-detection signals, and plan cleaning or isolation based on process-safety review.",
+      "rationale": "outlet_temp_c is above normal band at 92 C; risk score 95 reflects toxic material hazard, heat exchanger criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "temperature sensor check",
+        "flow trend",
+        "differential pressure",
+        "leak detection status"
+      ],
+      "escalation_path": [
+        "area owner",
+        "maintenance lead",
+        "process safety/EHS",
+        "operations manager"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "EPA RMP prevention framing: maintenance and monitoring are part of chemical accident prevention."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1008",
+      "source_event_id": "E-1008",
+      "asset_id": "PSV-9",
+      "site": "Plant D",
+      "severity": "critical",
+      "action_class": "immediate_controlled_intervention",
+      "time_horizon": "same shift",
+      "approval_required": true,
+      "confidence": "high",
+      "confidence_score": 0.95,
+      "plausible_failure_mode": "Overdue protective-device inspection or uncertain relief-system reliability.",
+      "recommendation": "Schedule PSV inspection/test, verify set pressure and tag/seal status, review service interval basis, and do not extend the interval without documented engineering approval.",
+      "rationale": "inspection_due_days is below normal band at -45 days; risk score 88 reflects flammable material hazard, relief valve criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "last PSV test certificate",
+        "set pressure record",
+        "seal/tag inspection",
+        "inspection interval basis"
+      ],
+      "escalation_path": [
+        "area owner",
+        "maintenance lead",
+        "process safety/EHS",
+        "operations manager"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "EPA RMP prevention framing: maintenance and monitoring are part of chemical accident prevention."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1005",
+      "source_event_id": "E-1005",
+      "asset_id": "R-101",
+      "site": "Plant C",
+      "severity": "high",
+      "action_class": "priority_inspection",
+      "time_horizon": "24 hours",
+      "approval_required": true,
+      "confidence": "high",
+      "confidence_score": 0.83,
+      "plausible_failure_mode": "Pressure excursion in flammable chemical service.",
+      "recommendation": "Validate pressure transmitter and control loop, verify relief path availability, hold startup escalation until the deviation is understood, and document safe operating-limit review.",
+      "rationale": "pressure_bar is above normal band at 12.9 bar; risk score 81 reflects flammable material hazard, reactor criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "pressure transmitter check",
+        "control-loop trend",
+        "relief path status",
+        "startup batch record"
+      ],
+      "escalation_path": [
+        "area owner",
+        "maintenance lead",
+        "process safety/EHS"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "EPA RMP prevention framing: maintenance and monitoring are part of chemical accident prevention."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1004",
+      "source_event_id": "E-1004",
+      "asset_id": "SCR-08",
+      "site": "Fab B",
+      "severity": "high",
+      "action_class": "priority_inspection",
+      "time_horizon": "24 hours",
+      "approval_required": true,
+      "confidence": "high",
+      "confidence_score": 0.85,
+      "plausible_failure_mode": "Reduced abatement effectiveness for acid or hazardous exhaust.",
+      "recommendation": "Confirm pH probe calibration, inspect dosing and recirculation, verify blowdown and reagent supply, and trend outlet conditions before clearing the abatement alarm.",
+      "rationale": "scrubber_ph is below normal band at 3.1 pH; risk score 78 reflects corrosive material hazard, scrubber criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "pH probe calibration",
+        "reagent tank level",
+        "recirculation pump amps",
+        "scrubber differential pressure"
+      ],
+      "escalation_path": [
+        "area owner",
+        "maintenance lead",
+        "process safety/EHS"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "SEMI EH&S framing: semiconductor equipment risk review includes exhaust ventilation, fire protection, equipment safety, and worker protection."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1001",
+      "source_event_id": "E-1001",
+      "asset_id": "WB-17",
+      "site": "Fab A",
+      "severity": "high",
+      "action_class": "priority_inspection",
+      "time_horizon": "24 hours",
+      "approval_required": true,
+      "confidence": "high",
+      "confidence_score": 0.93,
+      "plausible_failure_mode": "Loss of local exhaust capture at corrosive wet process equipment.",
+      "recommendation": "Verify exhaust flow instrumentation, inspect damper/fan status, check sash/hood configuration, and hold wet processing if capture is below the site's accepted EHS limit.",
+      "rationale": "exhaust_flow_cfm is below normal band at 410 cfm; risk score 74 reflects corrosive material hazard, wet bench criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "exhaust balance reading",
+        "hood/sash configuration",
+        "fan and damper status",
+        "acid service PM history"
+      ],
+      "escalation_path": [
+        "area owner",
+        "maintenance lead",
+        "process safety/EHS"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "SEMI EH&S framing: semiconductor equipment risk review includes exhaust ventilation, fire protection, equipment safety, and worker protection."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1009",
+      "source_event_id": "E-1009",
+      "asset_id": "CMP-03",
+      "site": "Fab A",
+      "severity": "medium",
+      "action_class": "planned_maintenance_review",
+      "time_horizon": "next planned access window",
+      "approval_required": false,
+      "confidence": "high",
+      "confidence_score": 0.85,
+      "plausible_failure_mode": "Drive-load increase that may indicate motor, bearing, pad, or slurry-delivery degradation.",
+      "recommendation": "Compare motor-current trend to wafer load, inspect bearings and pad conditioning, verify slurry delivery, and schedule maintenance before yield-impacting drift.",
+      "rationale": "motor_current_amp is above normal band at 72 A; risk score 53 reflects irritant material hazard, CMP polisher criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "motor current trend",
+        "wafer load",
+        "pad conditioning log",
+        "slurry flow record"
+      ],
+      "escalation_path": [
+        "maintenance planner",
+        "area owner"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "SEMI EH&S framing: semiconductor equipment risk review includes exhaust ventilation, fire protection, equipment safety, and worker protection."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1010",
+      "source_event_id": "E-1010",
+      "asset_id": "BLR-02",
+      "site": "Plant C",
+      "severity": "medium",
+      "action_class": "planned_maintenance_review",
+      "time_horizon": "next planned access window",
+      "approval_required": false,
+      "confidence": "high",
+      "confidence_score": 0.79,
+      "plausible_failure_mode": "Combustion-control drift with possible efficiency or flame-stability impact.",
+      "recommendation": "Verify oxygen analyzer calibration, inspect burner trim controls, review fuel/air ratio trend, and correct during a controlled utility maintenance window.",
+      "rationale": "stack_o2_pct is below normal band at 2.1 %; risk score 50 reflects flammable material hazard, boiler criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "oxygen analyzer calibration",
+        "burner trim trend",
+        "flame scanner status",
+        "fuel gas pressure trend"
+      ],
+      "escalation_path": [
+        "maintenance planner",
+        "area owner"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "EPA RMP prevention framing: maintenance and monitoring are part of chemical accident prevention."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1012",
+      "source_event_id": "E-1012",
+      "asset_id": "TK-07",
+      "site": "Plant D",
+      "severity": "low",
+      "action_class": "watchlist",
+      "time_horizon": "routine PM cycle",
+      "approval_required": false,
+      "confidence": "low",
+      "confidence_score": 0.43,
+      "plausible_failure_mode": "Inventory condition inside operating band.",
+      "recommendation": "No immediate intervention; keep routine inspection and confirm closed work order did not leave follow-up actions.",
+      "rationale": "level_pct is within normal band at 84 %; risk score 28 reflects corrosive material hazard, storage tank criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "level trend",
+        "closed work-order notes",
+        "routine tank inspection"
+      ],
+      "escalation_path": [
+        "maintenance planner"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "EPA RMP prevention framing: maintenance and monitoring are part of chemical accident prevention."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    },
+    {
+      "recommendation_id": "REC-E-1011",
+      "source_event_id": "E-1011",
+      "asset_id": "CH-14",
+      "site": "Fab B",
+      "severity": "low",
+      "action_class": "watchlist",
+      "time_horizon": "routine PM cycle",
+      "approval_required": false,
+      "confidence": "low",
+      "confidence_score": 0.43,
+      "plausible_failure_mode": "Temperature-control drift near process utility target.",
+      "recommendation": "Keep on watchlist, verify sensor calibration during routine PM, and trend supply temperature against lithography tolerance.",
+      "rationale": "supply_temp_c is within normal band at 20.2 C; risk score 14 reflects nonhazardous material hazard, chiller criticality, deviation magnitude, PM age, and work-order state.",
+      "evidence_to_collect": [
+        "temperature calibration",
+        "supply/return trend",
+        "PM checklist"
+      ],
+      "escalation_path": [
+        "maintenance planner"
+      ],
+      "scientific_basis": [
+        "RCM principle: choose a maintenance task that reduces failure probability or consequence for the asset's intended function.",
+        "FMEA-style reasoning: connect abnormal condition, plausible failure mode, effect, detection evidence, and corrective action.",
+        "OSHA PSM mechanical integrity: use written procedures, inspection/testing, documentation, and deficiency correction for covered process equipment.",
+        "SEMI EH&S framing: semiconductor equipment risk review includes exhaust ventilation, fire protection, equipment safety, and worker protection."
+      ],
+      "safety_constraints": [
+        "Do not treat the recommendation as authorization to operate, isolate, or restart equipment.",
+        "Use site lockout/tagout, PPE, line-breaking, hot-work, and confined-space procedures where applicable.",
+        "Use management-of-change review if the corrective action changes equipment, process chemistry, controls, alarm limits, procedures, or inspection intervals.",
+        "Correct confirmed deficiencies outside acceptable limits before further use, or document protective measures that assure safe operation until correction."
+      ]
+    }
+  ]
+}

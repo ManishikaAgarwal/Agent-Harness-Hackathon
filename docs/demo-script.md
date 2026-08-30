@@ -53,7 +53,7 @@ Approved: draft work orders for high and critical findings only.
 Show:
 
 ```bash
-npm run draft-workorders:approved
+npm run draft-workorders:approved -- --approval-file .trueforge/approval.json
 npm run dashboard
 ```
 

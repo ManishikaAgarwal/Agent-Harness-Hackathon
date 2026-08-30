@@ -34,13 +34,15 @@ npm run dashboard
 npm run setup:trueforge
 ```
 
-The `draft-workorders` command intentionally stops at the approval gate. After a qualified human approves the exact proposed actions, run `npm run draft-workorders:approved` to create the draft CSV.
+The `draft-workorders` command intentionally stops at the approval gate. After a qualified human approves the exact proposed actions, the agent must write a `.trueforge/approval.json` record containing `approved`, `approval_source`, `approver`, `approved_at`, `scope`, and the approved finding IDs, then run `npm run draft-workorders:approved -- --approval-file .trueforge/approval.json` to create the draft CSV.
 
-Then launch TrueForge from a normal Terminal:
+First launch TrueForge from a normal Terminal so it initializes the project-local database:
 
 ```bash
 ./start-trueforge.sh
 ```
+
+In a second Terminal, set `GEMINI_API_KEY` in the environment and run `npm run setup:trueforge` to seed the agents and read-only MCP configuration. Never put the key in the repository.
 
 In TrueForge, choose `fabguard-maintenance-agent-sandbox` and try:
 

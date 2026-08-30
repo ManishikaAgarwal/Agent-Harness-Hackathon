@@ -1,0 +1,36 @@
+import assert from "node:assert/strict";
+import { mkdirSync, mkdtempSync, readFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { spawnSync } from "node:child_process";
+import { analyzeEvents, loadEvents, writeReports } from "../src/risk-engine.mjs";
+
+const scratch = mkdtempSync(join(tmpdir(), "fabguard-test-"));
+mkdirSync(join(scratch, "reports"), { recursive: true });
+
+const samplePath = new URL("../sample-data/maintenance_events.csv", import.meta.url);
+const jsonPath = join(scratch, "reports", "risk.json");
+const markdownPath = join(scratch, "reports", "risk.md");
+const outputPath = join(scratch, "reports", "workorders.csv");
+writeReports(analyzeEvents(loadEvents(samplePath)), markdownPath, jsonPath);
+
+const denied = spawnSync(process.execPath, ["src/draft-workorders.mjs", jsonPath, outputPath], {
+  cwd: new URL("..", import.meta.url),
+  encoding: "utf8"
+});
+assert.equal(denied.status, 2);
+assert.match(denied.stderr, /Refusing to draft work orders/);
+
+const approved = spawnSync(process.execPath, ["src/draft-workorders.mjs", jsonPath, outputPath, "--approved"], {
+  cwd: new URL("..", import.meta.url),
+  encoding: "utf8"
+});
+assert.equal(approved.status, 0);
+
+const csv = readFileSync(outputPath, "utf8");
+assert.match(csv, /area_owner\+maintenance\+EHS/);
+assert.match(csv, /FG-0001/);
+assert.match(csv, /GC-04|VP-22|PSV-9/);
+
+console.log("workorder approval gate tests passed");
+

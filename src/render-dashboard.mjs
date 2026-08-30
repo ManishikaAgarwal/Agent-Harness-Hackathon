@@ -144,18 +144,13 @@ const recommendationRows = topRecommendations
   )
   .join("");
 
-const processNodes = [
-  ["Gas", "GC-04", "critical"],
-  ["Wet Etch", "WB-17", "high"],
-  ["Abatement", "SCR-08", "high"],
-  ["Reactor", "R-101", "high"],
-  ["Relief", "PSV-9", "critical"]
-]
+const processNodes = topFindings
+  .map((finding) => [finding.equipment_type, finding.asset_id, finding.severity])
   .map(
     ([label, asset, severity]) => `
-      <div class="map-node ${severity}">
-        <span>${label}</span>
-        <strong>${asset}</strong>
+      <div class="map-node ${escapeHtml(severity)}">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(asset)}</strong>
       </div>`
   )
   .join("");
@@ -677,7 +672,7 @@ const html = `<!doctype html>
                 <h2>Risk Register</h2>
                 <p>Scored from material hazard, equipment criticality, range deviation, PM age, and work-order state.</p>
               </div>
-              <span class="tag">12 telemetry events</span>
+              <span class="tag">${risk.findings.length} telemetry events</span>
             </div>
             <table>
               <thead>

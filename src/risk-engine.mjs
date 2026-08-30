@@ -73,13 +73,42 @@ export function parseCsv(text) {
 }
 
 export function loadEvents(path) {
-  return parseCsv(readFileSync(path, "utf8")).map((event) => ({
-    ...event,
-    value: Number(event.value),
-    normal_min: Number(event.normal_min),
-    normal_max: Number(event.normal_max),
-    days_since_pm: Number(event.days_since_pm)
-  }));
+  return parseCsv(readFileSync(path, "utf8")).map((event, index) => {
+    const rowNumber = index + 2;
+    const requiredFields = [
+      "event_id",
+      "asset_id",
+      "site",
+      "industry",
+      "equipment_type",
+      "process_material",
+      "material_class",
+      "metric",
+      "unit",
+      "work_order_status"
+    ];
+    const missing = requiredFields.filter((field) => !String(event[field] ?? "").trim());
+    if (missing.length > 0) {
+      throw new Error(`Invalid telemetry row ${rowNumber}: missing ${missing.join(", ")}`);
+    }
+
+    const numericFields = ["value", "normal_min", "normal_max", "days_since_pm"];
+    const parsed = Object.fromEntries(
+      numericFields.map((field) => [field, Number(event[field])])
+    );
+    const invalidNumeric = numericFields.filter((field) => !Number.isFinite(parsed[field]));
+    if (invalidNumeric.length > 0) {
+      throw new Error(`Invalid telemetry row ${rowNumber}: non-finite ${invalidNumeric.join(", ")}`);
+    }
+    if (parsed.normal_min >= parsed.normal_max) {
+      throw new Error(`Invalid telemetry row ${rowNumber}: normal_min must be below normal_max`);
+    }
+    if (parsed.days_since_pm < 0) {
+      throw new Error(`Invalid telemetry row ${rowNumber}: days_since_pm cannot be negative`);
+    }
+
+    return { ...event, ...parsed };
+  });
 }
 
 function clamp(value, min, max) {

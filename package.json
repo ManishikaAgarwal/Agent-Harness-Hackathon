@@ -1,0 +1,19 @@
+{
+  "name": "fabguard-maintenance-agent",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "TrueForge agent starter for semiconductor fab and chemical plant maintenance risk triage.",
+  "scripts": {
+    "analyze": "node src/analyze-maintenance.mjs sample-data/maintenance_events.csv reports/risk_triage_report.md reports/risk_triage.json",
+    "recommend": "node src/recommend-maintenance.mjs reports/risk_triage.json reports/recommendation_plan.md reports/recommendation_plan.json",
+    "draft-workorders": "node src/draft-workorders.mjs reports/risk_triage.json reports/work_orders_draft.csv",
+    "draft-workorders:approved": "node src/draft-workorders.mjs reports/risk_triage.json reports/work_orders_draft.csv --approved",
+    "dashboard": "node src/render-dashboard.mjs reports/risk_triage.json reports/work_orders_draft.csv reports/recommendation_plan.json reports/fabguard-console.html",
+    "setup:trueforge": "node scripts/setup-trueforge.mjs",
+    "test": "node test/risk-engine.test.mjs && node test/recommendation-engine.test.mjs && node test/workorder-gate.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
